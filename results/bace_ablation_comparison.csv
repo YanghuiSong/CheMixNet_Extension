@@ -1,0 +1,10 @@
+model,model_type,ablation_type,auc,accuracy,f1,precision,recall
+chemixnet_cnn_full,chemixnet_cnn,full,0.5,,,,
+chemixnet_cnn_no_smiles,chemixnet_cnn,no_smiles,0.5,,,,
+chemixnet_cnn_no_fingerprint,chemixnet_cnn,no_fingerprint,0.5,,,,
+chemixnet_rnn_full,chemixnet_rnn,full,0.5,,,,
+chemixnet_rnn_no_smiles,chemixnet_rnn,no_smiles,0.5,,,,
+chemixnet_rnn_no_fingerprint,chemixnet_rnn,no_fingerprint,0.5,,,,
+enhanced_chemixnet_full,enhanced_chemixnet,full,0.5,,,,
+enhanced_chemixnet_no_attention,enhanced_chemixnet,no_attention,0.5,,,,
+enhanced_chemixnet_no_graph,enhanced_chemixnet,no_graph,0.5,,,,

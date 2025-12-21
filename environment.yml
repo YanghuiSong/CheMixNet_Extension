@@ -1,0 +1,35 @@
+name: chemixnet
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy=1.21
+  - pandas=1.3
+  - scikit-learn=0.24
+  - matplotlib=3.4
+  - seaborn=0.11
+  - jupyter=1.0
+  - tqdm=4.62
+  - pyyaml=5.4
+  - joblib=1.0
+  - pillow=8.3
+  - rdkit=2021.03
+  - pytorch=1.9
+  - torchvision=0.10
+  - torchaudio=0.9
+  - cudatoolkit=11.1  # 根据CUDA版本调整
+  - pip:
+    - torch-scatter
+    - torch-sparse
+    - torch-cluster
+    - torch-spline-conv
+    - torch-geometric
+    - deepchem
+    - plotly
+    - networkx
+    - pytest
+    - pytest-cov
+    - ipywidgets

@@ -1,0 +1,74 @@
+# 项目配置文件
+paths:
+  data_dir: "D:/SYH/CodeReading/data"
+  results_dir: "./results"
+  checkpoints_dir: "./results/checkpoints"
+  logs_dir: "./results/logs"
+  figures_dir: "./results/figures"
+
+data:
+  max_smiles_len: 100
+  test_size: 0.2
+  val_size: 0.1
+  random_seed: 42
+  batch_size: 32
+  num_workers: 4
+
+model:
+  # 基础CheMixNet配置
+  chemixnet:
+    cnn_channels: [64, 128, 256]
+    fc_dims: [512, 256, 128]
+    dropout_rate: 0.3
+  
+  # 增强版配置
+  enhanced:
+    atom_feature_dim: 64
+    hidden_dims: [256, 128, 64]
+    dropout_rate: 0.3
+    use_attention: true
+  
+  # GNN配置（扩展）
+  gnn:
+    hidden_channels: 128
+    num_layers: 3
+    dropout: 0.2
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 1e-5
+  patience: 10
+  gradient_clip: 1.0
+  
+  # 学习率调度
+  scheduler:
+    type: "ReduceLROnPlateau"
+    mode: "min"
+    factor: 0.5
+    patience: 5
+
+evaluation:
+  metrics:
+    regression: ["mse", "rmse", "mae", "r2"]
+    classification: ["auc", "accuracy", "f1", "precision", "recall"]
+  
+  visualization:
+    plot_training_history: true
+    plot_confusion_matrix: true
+    plot_feature_importance: true
+    plot_attention_weights: true
+
+experiments:
+  # 要运行的实验列表
+  run_baselines: true
+  run_chemixnet: true
+  run_enhanced: true
+  run_ablation: true
+  
+  # 消融实验设置
+  ablation_studies:
+    - no_smiles
+    - no_fingerprint
+    - no_graph
+    - no_attention
